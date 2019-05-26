@@ -1,0 +1,30 @@
+<div class="form-group">
+	<input class="form-control" placeholder="Search..."  #input>
+</div>
+
+<div class="form-group">
+		<button (click)="buttonClick()"> Click Me </button>
+	</div>
+
+<section class="list-group">
+	<table appArrowNavigationManager>
+		<tr *ngFor="let user of users">
+			<td>
+					<app-list-item [item]="user" class="list-group-item" appResequenceArrowHandler>
+					{{user.name}}
+				</app-list-item>
+			</td>
+		</tr>
+	</table>
+	
+</section>
+
+<p style="margin-top: 1em" *ngIf="model">Model: {{model}}</p>
+
+  <!-- [disabled]="index === 1" -->
+
+	<!-- <app-list-item *ngFor="let user of users | filter: 'name' : input.value; index as index" 
+  
+					[item]="user" class="list-group-item">
+					{{user.name}}
+				</app-list-item> -->
